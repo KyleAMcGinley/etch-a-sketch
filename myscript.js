@@ -29,8 +29,7 @@ const grids = document.querySelectorAll('.grid-boxes');
 
 function stylingGrids(){
     for (i = 0; i <= grids.length - 1; i++){
-        grids[i].style.cssText = "padding: 35px; border-style: solid; border-width: 5px; border-color: black";
+        grids[i].style.cssText = "display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
     }
 }
-
 stylingGrids();
