@@ -47,3 +47,9 @@ function gridColorChange(event){
     }
 
 addEventListenerGrids(grids, 'mouseover', gridColorChange);
+
+function getUserInput(){
+    const userInput = prompt('How many squares per side? Max amount of squares is 100.')
+
+    return console.log(userInput)
+}

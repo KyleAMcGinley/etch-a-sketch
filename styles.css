@@ -1,5 +1,6 @@
 body{
     display: flex;
+    flex-direction: columns;
     justify-content: center;
     align-items: center;
 }
@@ -10,4 +11,9 @@ body{
     flex-shrink: 1;
     max-width: 800px;
     max-height: 800px;
+}
+
+#input-button{
+    display: block;
+    padding: 20px;
 }
