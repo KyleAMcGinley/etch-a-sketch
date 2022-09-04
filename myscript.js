@@ -5,6 +5,7 @@ const newDiv = document.createElement('div');
 
 //This function uses a loop to create <divs> and add it to container
 function makeGrid(){
+
     for(i = 1; i <= 256; i++){
         const newDiv = document.createElement('div');
         container.appendChild(newDiv);
@@ -35,6 +36,7 @@ function stylingGrids(){
 }
 stylingGrids();
 
+//Made function that when ran adds an event listener to each node in a node list
 function addEventListenerGrids(list, event, fn){
     for(i = 0; i <= grids.length - 1; i++){
 
@@ -42,14 +44,22 @@ function addEventListenerGrids(list, event, fn){
     };
 }
 
+//Made a function that changes the node's style when an event happens
 function gridColorChange(event){
         event.target.style.cssText = "background: yellow; display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
     }
 
+//Call function that changes grid color when the mouse is over the individual grid
 addEventListenerGrids(grids, 'mouseover', gridColorChange);
 
-function getUserInput(){
-    const userInput = prompt('How many squares per side? Max amount of squares is 100.')
-
-    return console.log(userInput)
+//Function to get user input and assign it to a variable
+function getUserSelection(){
+    let input = prompt('How many squares for each side of the grid? Max amount is 100.');
+    return input;
 }
+
+//Assign button to equal input button node
+const button = document.querySelector('button#input-button');
+
+//Add event listener to the button to run get userinput
+button.addEventListener('click', getUserSelection)
