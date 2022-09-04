@@ -6,25 +6,36 @@ const newDiv = document.createElement('div');
 //This function uses a loop to create <divs> and add it to container
 function makeGrid(){
 
-    for(i = 1; i <= 256; i++){
+    let gridSize = getUserSelection();
+
+    for(i = 1; i <= (gridSize * gridSize); i++){
         const newDiv = document.createElement('div');
-        container.appendChild(newDiv);
-        
+        container.appendChild(newDiv);        
+    }
+
+    
+    const divs = document.querySelectorAll('#container > div');
+    for (i = 0; i <= divs.length - 1; i++){
+        divs[i].classList.add('grid-boxes');
+    }
+
+    const grids = document.querySelectorAll('.grid-boxes');
+    for (i = 0; i <= grids.length - 1; i++){
+        grids[i].style.cssText = "display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
     }
 }
-makeGrid();
 
 //Using function to add a class list to the 16 new divs
 
 //Assigned divs variable to all the divs within the container -- results in a nodelist
 const divs = document.querySelectorAll('#container > div');
+
 //Using a loop function to name each div within the node list
 function namingGrids(){
     for (i = 0; i <= divs.length - 1; i++){
         divs[i].classList.add('grid-boxes');
     }
 }
-namingGrids();
 
 const grids = document.querySelectorAll('.grid-boxes');
 
@@ -34,7 +45,7 @@ function stylingGrids(){
         grids[i].style.cssText = "display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
     }
 }
-stylingGrids();
+
 
 //Made function that when ran adds an event listener to each node in a node list
 function addEventListenerGrids(list, event, fn){
@@ -62,4 +73,4 @@ function getUserSelection(){
 const button = document.querySelector('button#input-button');
 
 //Add event listener to the button to run get userinput
-button.addEventListener('click', getUserSelection)
+button.addEventListener('click', makeGrid)
