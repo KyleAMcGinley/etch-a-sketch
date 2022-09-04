@@ -46,4 +46,4 @@ function gridColorChange(event){
         event.target.style.cssText = "background: yellow; display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
     }
 
-addEventListenerGrids(grids, 'hover', gridColorChange);
+addEventListenerGrids(grids, 'mouseover', gridColorChange);
