@@ -27,9 +27,23 @@ namingGrids();
 
 const grids = document.querySelectorAll('.grid-boxes');
 
+//Made function that adds style to each grid box using a loop function
 function stylingGrids(){
     for (i = 0; i <= grids.length - 1; i++){
         grids[i].style.cssText = "display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
     }
 }
 stylingGrids();
+
+function addEventListenerGrids(list, event, fn){
+    for(i = 0; i <= grids.length - 1; i++){
+
+        list[i].addEventListener(event, fn);
+    };
+}
+
+function gridColorChange(event){
+        event.target.style.cssText = "background: yellow; display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
+    }
+
+addEventListenerGrids(grids, 'hover', gridColorChange);
