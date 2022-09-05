@@ -2,6 +2,66 @@
 //Going to use a loop function to add 16 <div>s to the #container
 const container = document.querySelector('div#container');
 const newDiv = document.createElement('div');
+const testRows = document.createElement('div');
+function makeTestRows(){
+    for(var i = 1; i <= 10; i++){
+        const testRows = document.createElement('div');
+        container.appendChild(testRows);        
+    }
+}
+makeTestRows();
+
+const allRows = document.querySelectorAll('#container > div');
+
+function namingRows(){
+    for (var i = 0; i <= allRows.length - 1; i++){
+        allRows[i].classList.add('rows');
+    }
+}
+namingRows()
+
+function makeSquare(){
+    for(var i = 0; i < 10; i++){
+        const testSquares = document.createElement('div');
+        const oneRow = allRows[i];
+        oneRow.appendChild(testSquares);
+    }
+}
+
+function makingMultipleSquares(){
+    for(var i = 0; i < 10; i++){
+
+       makeSquare();
+    }
+}
+makingMultipleSquares();
+
+const allSquares = document.querySelectorAll('.rows > div');
+
+function namingSquares(){
+    for(var i = 0; i <= allSquares.length - 1; i++){
+        allSquares[i].classList.add('squares');
+    }
+}
+namingSquares();
+
+function stylingRows(){
+    for (i = 0; i <= allRows.length - 1; i++){
+        allRows[i].style.cssText = "display: flex; height: 100%;"
+    }
+}
+stylingRows();
+
+function stylingSquares(){
+    for (i = 0; i <= allSquares.length - 1; i++){
+        allSquares[i].style.cssText = "display: flex; width: 100%; border-width: 2px; border-style: solid; border-color: black"
+    }
+}
+stylingSquares();
+
+
+
+
 
 //This function uses a loop to create <divs> and add it to container
 function makeGrid(){
