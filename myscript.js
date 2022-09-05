@@ -59,6 +59,10 @@ function stylingSquares(){
 }
 stylingSquares();
 
+function makeNewGrid(){
+    let gridSize = getUserSelection();
+}
+
 
 
 
@@ -133,4 +137,4 @@ function getUserSelection(){
 const button = document.querySelector('button#input-button');
 
 //Add event listener to the button to run get userinput
-button.addEventListener('click', makeGrid)
+button.addEventListener('click', makeNewGrid)
