@@ -74,58 +74,22 @@ function makeNewGrid(){
     stylingRows();
 
     stylingSquares();
-}
-
-
-
-
-
-//This function uses a loop to create <divs> and add it to container
-function makeGrid(){
-
-    let gridSize = getUserSelection();
-
-    for(i = 1; i <= (gridSize * gridSize); i++){
-        const newDiv = document.createElement('div');
-        container.appendChild(newDiv);        
-    }
-
     
-    const divs = document.querySelectorAll('#container > div');
-    for (i = 0; i <= divs.length - 1; i++){
-        divs[i].classList.add('grid-boxes');
-    }
+    const grids = document.querySelectorAll('.squares');
 
-    const grids = document.querySelectorAll('.grid-boxes');
-    for (i = 0; i <= grids.length - 1; i++){
-        grids[i].style.cssText = "display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
-    }
+    addEventListenerGrids(grids, 'mouseover', gridColorChange);
 }
-
-//Using function to add a class list to the 16 new divs
 
 //Assigned divs variable to all the divs within the container -- results in a nodelist
 const divs = document.querySelectorAll('#container > div');
 
-//Using a loop function to name each div within the node list
-function namingGrids(){
-    for (i = 0; i <= divs.length - 1; i++){
-        divs[i].classList.add('grid-boxes');
-    }
-}
+const grids = document.querySelectorAll('.squares');
 
-const grids = document.querySelectorAll('.grid-boxes');
-
-//Made function that adds style to each grid box using a loop function
-function stylingGrids(){
-    for (i = 0; i <= grids.length - 1; i++){
-        grids[i].style.cssText = "display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
-    }
-}
 
 
 //Made function that when ran adds an event listener to each node in a node list
 function addEventListenerGrids(list, event, fn){
+    const grids = document.querySelectorAll('.squares');
     for(i = 0; i <= grids.length - 1; i++){
 
         list[i].addEventListener(event, fn);
@@ -134,7 +98,7 @@ function addEventListenerGrids(list, event, fn){
 
 //Made a function that changes the node's style when an event happens
 function gridColorChange(event){
-        event.target.style.cssText = "background: yellow; display: flex; padding: 24px; border-style: solid; border-width: 1px; border-color: black";
+        event.target.style.cssText = "background: yellow; display: flex; width: 100%; border-width: 2px; border-style: solid; border-color: black"
     }
 
 //Call function that changes grid color when the mouse is over the individual grid
