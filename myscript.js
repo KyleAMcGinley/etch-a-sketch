@@ -34,9 +34,8 @@ function makingMultipleSquares(gridSize){
     }
 }
 
-const allSquares = document.querySelectorAll('.rows > div');
-
 function namingSquares(){
+    const allSquares = document.querySelectorAll('.rows > div');    
     for(var i = 0; i <= allSquares.length - 1; i++){
         allSquares[i].classList.add('squares');
     }
@@ -68,8 +67,7 @@ function makeNewGrid(){
     
     makingMultipleSquares(gridSize);
 
-
-
+    namingSquares();
 }
 
 
