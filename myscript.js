@@ -3,23 +3,24 @@
 const container = document.querySelector('div#container');
 const newDiv = document.createElement('div');
 const testRows = document.createElement('div');
-function makeTestRows(){
+function makeTestRows(gridSize){
     for(var i = 1; i <= gridSize; i++){
         const testRows = document.createElement('div');
         container.appendChild(testRows);        
     }
 }
 
-const allRows = document.querySelectorAll('#container > div');
 
 function namingRows(){
+    const allRows = document.querySelectorAll('#container > div');
     for (var i = 0; i <= allRows.length - 1; i++){
         allRows[i].classList.add('rows');
     }
 }
 
 function makeSquare(){
-    for(var i = 0; i < 10; i++){
+    const allRows = document.querySelectorAll('#container > div');
+    for(var i = 0; i < allRows.length; i++){
         const testSquares = document.createElement('div');
         const oneRow = allRows[i];
         oneRow.appendChild(testSquares);
@@ -56,8 +57,14 @@ function stylingSquares(){
 
 
 function makeNewGrid(){
+
     let gridSize = getUserSelection();
-    m
+    makeTestRows(gridSize);
+
+    namingRows();
+
+    makeSquare();
+
 }
 
 
