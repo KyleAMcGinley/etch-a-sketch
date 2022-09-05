@@ -42,12 +42,14 @@ function namingSquares(){
 }
 
 function stylingRows(){
+    const allRows = document.querySelectorAll('#container > div');
     for (i = 0; i <= allRows.length - 1; i++){
         allRows[i].style.cssText = "display: flex; height: 100%;"
     }
 }
 
 function stylingSquares(){
+    const allSquares = document.querySelectorAll('.rows > div');
     for (i = 0; i <= allSquares.length - 1; i++){
         allSquares[i].style.cssText = "display: flex; width: 100%; border-width: 2px; border-style: solid; border-color: black"
     }
@@ -68,6 +70,10 @@ function makeNewGrid(){
     makingMultipleSquares(gridSize);
 
     namingSquares();
+
+    stylingRows();
+
+    stylingSquares();
 }
 
 
