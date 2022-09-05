@@ -27,10 +27,10 @@ function makeSquare(){
     }
 }
 
-function makingMultipleSquares(){
-    for(var i = 0; i < 10; i++){
+function makingMultipleSquares(gridSize){
+    for(var i = 0; i < gridSize; i++){
 
-       makeSquare();
+       makeSquare(i);
     }
 }
 
@@ -59,11 +59,16 @@ function stylingSquares(){
 function makeNewGrid(){
 
     let gridSize = getUserSelection();
+
     makeTestRows(gridSize);
 
     namingRows();
 
     makeSquare();
+    
+    makingMultipleSquares(gridSize);
+
+
 
 }
 
